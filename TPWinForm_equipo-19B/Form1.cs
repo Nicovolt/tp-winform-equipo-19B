@@ -12,6 +12,7 @@ namespace TPWinForm_equipo_19B
 {
     public partial class Form1 : Form
     {
+        private List<Articulo> articuloList;
         public Form1()
         {
             InitializeComponent();
@@ -20,11 +21,11 @@ namespace TPWinForm_equipo_19B
         private void Form1_Load(object sender, EventArgs e)
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-            dvgArticulo.DataSource = articuloNegocio.listar();
-        }
 
-        private void dvgArticulo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            articuloList = articuloNegocio.listar();
+
+            dvgArticulo.DataSource = articuloList;
+
 
         }
 

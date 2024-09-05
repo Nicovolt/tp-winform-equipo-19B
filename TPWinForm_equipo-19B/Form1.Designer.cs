@@ -45,7 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dvgArticulo = new System.Windows.Forms.DataGridView();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dvgArticulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -194,13 +196,22 @@
             this.dvgArticulo.Name = "dvgArticulo";
             this.dvgArticulo.Size = new System.Drawing.Size(709, 273);
             this.dvgArticulo.TabIndex = 16;
-            this.dvgArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgArticulo_CellContentClick);
+            // 
+            // pbImagen
+            // 
+            this.pbImagen.Location = new System.Drawing.Point(721, 62);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(245, 270);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagen.TabIndex = 17;
+            this.pbImagen.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 413);
+            this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.dvgArticulo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -222,6 +233,7 @@
             this.Text = "frmListadoArt";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgArticulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,6 +258,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dvgArticulo;
+        private System.Windows.Forms.PictureBox pbImagen;
     }
 }
 
