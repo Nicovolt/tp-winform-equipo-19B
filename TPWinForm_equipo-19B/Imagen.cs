@@ -8,11 +8,11 @@ namespace TPWinForm_equipo_19B
 {
     internal class Imagen
     {
-        public string UrlImagen { get; set; }
+        public string Url { get; set; }
 
         public override string ToString()
         {
-            return UrlImagen;
+            return Url;
         }
     }
 }

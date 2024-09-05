@@ -196,6 +196,7 @@
             this.dvgArticulo.Name = "dvgArticulo";
             this.dvgArticulo.Size = new System.Drawing.Size(709, 273);
             this.dvgArticulo.TabIndex = 16;
+            this.dvgArticulo.SelectionChanged += new System.EventHandler(this.dvgArticulo_SelectionChanged);
             // 
             // pbImagen
             // 

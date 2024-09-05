@@ -39,7 +39,7 @@ namespace TPWinForm_equipo_19B
                     aux.Precio = (decimal)lector["Precio"];
 
                     aux.ImagenUrl = new Imagen();
-                    aux.ImagenUrl.UrlImagen = (string)lector["ImagenUrl"];
+                    aux.ImagenUrl.Url = (string)lector["ImagenUrl"];
 
                     lista.Add(aux);
 
