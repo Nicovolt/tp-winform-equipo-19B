@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace TPWinForm_equipo_19B
 {
-    public partial class Form1 : Form
+    public partial class frmVentanaAgregarArticulo : Form
     {
-        public Form1()
+        public frmVentanaAgregarArticulo()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCancelarArticulo_Click(object sender, EventArgs e)
         {
-            frmVentanaAgregarArticulo agregar = new frmVentanaAgregarArticulo();
-            agregar.Show();
+            this.Close();
         }
     }
 }
