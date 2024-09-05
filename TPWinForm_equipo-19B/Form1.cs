@@ -37,5 +37,11 @@ namespace TPWinForm_equipo_19B
         {
             Close();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmVentanaAgregarArticulo agregar = new frmVentanaAgregarArticulo();
+            agregar.Show();
+        }
     }
 }

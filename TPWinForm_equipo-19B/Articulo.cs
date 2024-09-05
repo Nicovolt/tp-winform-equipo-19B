@@ -16,8 +16,5 @@ namespace TPWinForm_equipo_19B
         public int Categoria { get; set; }  
         public string Imagen { get; set; }
         public decimal Precio { get; set; }
-
-
-
     }
 }
