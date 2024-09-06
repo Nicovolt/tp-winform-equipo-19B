@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace TPWinForm_equipo_19B
 {
@@ -29,10 +31,7 @@ namespace TPWinForm_equipo_19B
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -66,6 +65,11 @@ namespace TPWinForm_equipo_19B
 
                 pbImagen.Load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLEoaTsWQuPn6bW-_n6hqZvmy5Lh64qwETLg&s");
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

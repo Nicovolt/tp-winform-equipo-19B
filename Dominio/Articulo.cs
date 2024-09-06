@@ -5,9 +5,10 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TPWinForm_equipo_19B
+namespace Dominio
+
 {
-    internal class Articulo
+    public class Articulo
     {
         public int ID { get; set; }
         public string Nombre { get; set; }

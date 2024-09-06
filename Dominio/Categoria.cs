@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TPWinForm_equipo_19B
+namespace Dominio
 {
-    internal class Marca
+    public class Categoria
     {
         public int IdMarca { get; set; }
         public string Descripcion { get; set; }

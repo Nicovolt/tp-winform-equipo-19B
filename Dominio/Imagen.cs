@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TPWinForm_equipo_19B
+namespace Dominio
 {
-    internal class Imagen
+    public class Imagen
     {
         public string Url { get; set; }
 

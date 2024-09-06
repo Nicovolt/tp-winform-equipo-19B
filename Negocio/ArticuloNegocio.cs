@@ -1,13 +1,13 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
-namespace TPWinForm_equipo_19B
+using Dominio;
+namespace Negocio
 {
-    internal class ArticuloNegocio
+    public class ArticuloNegocio
     {
         public List<Articulo> listar()
         {
@@ -59,6 +59,19 @@ namespace TPWinForm_equipo_19B
                 sqlConnection.Close();
             }
 
+        }
+
+        public void eliminar() 
+        {
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
