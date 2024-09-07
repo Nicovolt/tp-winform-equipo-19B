@@ -61,17 +61,6 @@ namespace Negocio
 
         }
 
-        public void eliminar() 
-        {
-            try
-            {
-                
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
+        
     }
 }

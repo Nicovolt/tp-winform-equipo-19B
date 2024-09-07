@@ -69,7 +69,50 @@ namespace TPWinForm_equipo_19B
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            Articulo seleccionado;
+            
 
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Estas seguro que queres eliminar?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dvgArticulo.CurrentRow.DataBoundItem;
+                    eliminarArticulos(seleccionado.ID);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public void eliminarArticulos(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from ARTICULOS where id = @id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+                cargar();
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+        private void cargar()
+        {
+            ArticuloNegocio negArt = new ArticuloNegocio();
+            Lista = negArt.listar();
+            dvgArticulo.DataSource = Lista;
+            
         }
     }
 }
