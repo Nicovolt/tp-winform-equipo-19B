@@ -114,5 +114,26 @@ namespace TPWinForm_equipo_19B
             dvgArticulo.DataSource = Lista;
             
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaBusqueda;
+
+            string busqueda = txtId.Text;
+
+            if (busqueda != "")
+            {
+                listaBusqueda = Lista.FindAll(art => art.ID == int.Parse(busqueda));
+            }
+            else
+            {
+                listaBusqueda = Lista;
+            }
+
+
+            dvgArticulo.DataSource = null;
+            dvgArticulo.DataSource = listaBusqueda;
+
+        }
     }
 }
