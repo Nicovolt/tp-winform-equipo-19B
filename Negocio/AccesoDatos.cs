@@ -23,9 +23,9 @@ namespace Negocio
         }
         public void setearConsulta(string consulta)
         {
+            comando.Parameters.Clear(); // Utilizo este metodo para limpiar el comando
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
-
         }
 
         public void ejecutarLectura()

@@ -135,5 +135,14 @@ namespace TPWinForm_equipo_19B
             dvgArticulo.DataSource = listaBusqueda;
 
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Articulo selected = (Articulo)dvgArticulo.CurrentRow.DataBoundItem;
+
+            frmVentanaAgregarArticulo modificar = new frmVentanaAgregarArticulo(selected);
+            modificar.ShowDialog();
+            cargar();
+        }
     }
 }
