@@ -42,8 +42,6 @@ namespace Negocio
                     aux.ImagenUrl.Url = (string)lector["ImagenUrl"];
 
                     lista.Add(aux);
-
-
                 }
 
 
@@ -61,6 +59,31 @@ namespace Negocio
 
         }
 
-        
+        public void modificarArticulo(Articulo item)
+        {
+            AccesoDatos data = new AccesoDatos();
+
+            try
+            {
+                data.setearConsulta("UPDATE articulos SET codigo = @Codigo@, nombre = @Nombre@, descripcion = @Descripcion@, idMarca = @Marca@, idCategoria = @Categoria@, precio = @Precio@ WHERE Id = @ID@;");
+                data.setearParametro("@ID@", item.ID);
+                data.setearParametro("@codigo@", item.Codigo);
+                data.setearParametro("@nombre@", item.Nombre);
+                data.setearParametro("@descripcion@", item.Descripcion);
+                data.setearParametro("@marca@", item.Marca);
+                data.setearParametro("@categoria@", item.Categoria);
+                data.setearParametro("@precio@", item.Precio);
+
+                data.ejecutarAccion();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                data.cerrarConexion();
+            }
+        }
     }
 }
