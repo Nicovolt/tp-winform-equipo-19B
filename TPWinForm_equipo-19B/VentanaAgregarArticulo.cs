@@ -36,8 +36,14 @@ namespace TPWinForm_equipo_19B
         private void frmVentanaAgregarArticulo_Load(object sender, EventArgs e)
         {
             cargaAgregar();
+            addCategoria();
         }
 
+        private void addCategoria() { 
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            cbxCategoria.DataSource = categoriaNegocio.Listar();
+        }
+ 
         private void cargaAgregar()
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
@@ -60,7 +66,7 @@ namespace TPWinForm_equipo_19B
                     tbxCodigo.Text = articulo.Codigo;
                     tbxNombre.Text = articulo.Nombre;
                     tbxDescripcion.Text = articulo.Descripcion;
-                    cbxMarca.SelectedIndex = articulo.Marca;
+                   // cbxMarca.SelectedIndex = articulo.Marca;
                     //cbxCategoria.SelectedIndex = articulo.Categoria;
                     tbxUrlImagen.Text = articulo.ImagenUrl.Url;
                     cargarImagen(articulo.ImagenUrl.Url);

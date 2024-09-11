@@ -22,7 +22,7 @@ namespace Negocio
             {
                 sqlConnection.ConnectionString = "server= .\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
                 cmd.CommandType = System.Data.CommandType.Text;
-                cmd.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion, C.Descripcion, Precio, I.ImagenUrl FROM ARTICULOS A, IMAGENES I, CATEGORIAS C, MARCAS M where A.Id = I.IdArticulo AND A.IdMarca = M.Id AND A.IdCategoria = C.Id\r\n";
+                cmd.CommandText = "SELECT A.Id, Codigo, A.Nombre, A.Descripcion AS ArticuloDescripcion, M.Descripcion AS MarcaDescripcion, C.Descripcion AS CategoriaDescripcion, Precio, I.ImagenUrl FROM ARTICULOS A, IMAGENES I, CATEGORIAS C, MARCAS M WHERE A.Id = I.IdArticulo AND A.IdMarca = M.Id AND A.IdCategoria = C.Id";
                 cmd.Connection = sqlConnection;
 
                 sqlConnection.Open();
@@ -35,8 +35,14 @@ namespace Negocio
                     aux.Codigo = (string)lector["Codigo"];
                     aux.ID = (int)lector["Id"];
                     aux.Nombre = (string)lector["Nombre"];
-                    aux.Descripcion = (string)lector["Descripcion"];
+                    aux.Descripcion = (string)lector["ArticuloDescripcion"];
                     aux.Precio = (decimal)lector["Precio"];
+
+                    aux.categoria = new Categoria();
+                    aux.categoria.Descripcion = (string)lector["CategoriaDescripcion"];
+
+                    aux.Marca = new Marca();
+                    aux.Marca.Descripcion = (string)lector["MarcaDescripcion"];
 
                     aux.ImagenUrl = new Imagen();
                     aux.ImagenUrl.Url = (string)lector["ImagenUrl"];
@@ -71,7 +77,7 @@ namespace Negocio
                 data.setearParametro("@nombre@", item.Nombre);
                 data.setearParametro("@descripcion@", item.Descripcion);
                 data.setearParametro("@marca@", item.Marca);
-                data.setearParametro("@categoria@", item.Categoria);
+               // data.setearParametro("@categoria@", item.Categoria);
                 data.setearParametro("@precio@", item.Precio);
 
                 data.ejecutarAccion();
