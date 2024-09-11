@@ -32,12 +32,12 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnMarcasCategorias = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -89,14 +89,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Listado de articulos";
             // 
-            // label2
+            // lblId
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(227, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ID:";
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(227, 30);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(21, 13);
+            this.lblId.TabIndex = 4;
+            this.lblId.Text = "ID:";
             // 
             // txtId
             // 
@@ -105,15 +105,15 @@
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 5;
             // 
-            // button4
+            // btnBuscar
             // 
-            this.button4.Location = new System.Drawing.Point(360, 25);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnBuscar.Location = new System.Drawing.Point(360, 25);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnCerrar
             // 
@@ -125,23 +125,23 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // button6
+            // btnMarcasCategorias
             // 
-            this.button6.Location = new System.Drawing.Point(721, 27);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(102, 29);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Marcas/Categorias";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnMarcasCategorias.Location = new System.Drawing.Point(721, 27);
+            this.btnMarcasCategorias.Name = "btnMarcasCategorias";
+            this.btnMarcasCategorias.Size = new System.Drawing.Size(102, 29);
+            this.btnMarcasCategorias.TabIndex = 8;
+            this.btnMarcasCategorias.Text = "Marcas/Categorias";
+            this.btnMarcasCategorias.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnFiltrar
             // 
-            this.button7.Location = new System.Drawing.Point(452, 358);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Filtrar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Location = new System.Drawing.Point(452, 358);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 9;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
@@ -194,7 +194,7 @@
             // dvgArticulo
             // 
             this.dvgArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgArticulo.Location = new System.Drawing.Point(0, 59);
+            this.dvgArticulo.Location = new System.Drawing.Point(6, 62);
             this.dvgArticulo.Name = "dvgArticulo";
             this.dvgArticulo.Size = new System.Drawing.Size(709, 273);
             this.dvgArticulo.TabIndex = 16;
@@ -222,12 +222,12 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.btnMarcasCategorias);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
@@ -248,12 +248,12 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnMarcasCategorias;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
