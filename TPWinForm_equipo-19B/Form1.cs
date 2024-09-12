@@ -153,5 +153,57 @@ namespace TPWinForm_equipo_19B
             modificar.ShowDialog();
             cargar();
         }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+           
+                List<Articulo> listaFiltrada;
+
+                string filtroMarca = txtFiltroMarc.Text;
+                string filtroCategoria = txtFiltroCat.Text;
+
+
+                if (filtroMarca != "" && filtroCategoria != "" && txtPrecio.Text != "")
+                {
+
+                    listaFiltrada = Lista.FindAll(x => x.Marca.ToString() == filtroMarca && x.Categoria.ToString() == filtroCategoria && x.Precio <= decimal.Parse(txtPrecio.Text));
+                }
+
+                else if (filtroMarca != "" && filtroCategoria != "")
+                {
+                    listaFiltrada = Lista.FindAll(x => x.Marca.ToString() == filtroMarca && x.Categoria.ToString() == filtroCategoria);
+                }
+                else if (filtroMarca != "" && txtPrecio.Text != "")
+                {
+                    listaFiltrada = Lista.FindAll(x => x.Marca.ToString() == filtroMarca && x.Precio <= decimal.Parse(txtPrecio.Text));
+                }
+                else if (filtroCategoria != "" && txtPrecio.Text != "")
+                {
+                    listaFiltrada = Lista.FindAll(x => x.Categoria.ToString() == filtroCategoria && x.Precio <= decimal.Parse(txtPrecio.Text));
+                }
+                else if (filtroMarca != "")
+                {
+                    listaFiltrada = Lista.FindAll(x => x.Marca.ToString() == filtroMarca);
+                }
+                else if (filtroCategoria != "")
+                {
+                    listaFiltrada = Lista.FindAll(x => x.Categoria.ToString() == filtroCategoria);
+                }
+                else if (txtPrecio.Text != "")
+                {
+                    listaFiltrada = Lista.FindAll(x => x.Precio <= decimal.Parse(txtPrecio.Text));
+                }
+
+                else
+                {
+                    listaFiltrada = Lista;
+                }
+
+
+            dvgArticulo.DataSource = null;
+            dvgArticulo.DataSource = listaFiltrada;
+            dvgArticulo.Columns["Codigo"].Visible = false;
+            
+        }
     }
 }

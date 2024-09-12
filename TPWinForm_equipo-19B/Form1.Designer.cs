@@ -38,9 +38,9 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnMarcasCategorias = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFiltroMarc = new System.Windows.Forms.TextBox();
+            this.txtFiltroCat = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -142,27 +142,28 @@
             this.btnFiltrar.TabIndex = 9;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // textBox2
+            // txtFiltroMarc
             // 
-            this.textBox2.Location = new System.Drawing.Point(533, 361);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtFiltroMarc.Location = new System.Drawing.Point(533, 361);
+            this.txtFiltroMarc.Name = "txtFiltroMarc";
+            this.txtFiltroMarc.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltroMarc.TabIndex = 10;
             // 
-            // textBox3
+            // txtFiltroCat
             // 
-            this.textBox3.Location = new System.Drawing.Point(639, 361);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtFiltroCat.Location = new System.Drawing.Point(639, 361);
+            this.txtFiltroCat.Name = "txtFiltroCat";
+            this.txtFiltroCat.Size = new System.Drawing.Size(100, 20);
+            this.txtFiltroCat.TabIndex = 11;
             // 
-            // textBox4
+            // txtPrecio
             // 
-            this.textBox4.Location = new System.Drawing.Point(745, 361);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtPrecio.Location = new System.Drawing.Point(745, 361);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.TabIndex = 12;
             // 
             // label3
             // 
@@ -219,9 +220,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtFiltroCat);
+            this.Controls.Add(this.txtFiltroMarc);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.btnMarcasCategorias);
             this.Controls.Add(this.btnCerrar);
@@ -254,9 +255,9 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnMarcasCategorias;
         private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFiltroMarc;
+        private System.Windows.Forms.TextBox txtFiltroCat;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
