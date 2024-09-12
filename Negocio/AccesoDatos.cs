@@ -51,7 +51,7 @@ namespace Negocio
             try
             {
                 conexion.Open();
-                comando.ExecuteNonQuery();
+                lector = comando.ExecuteReader();
             }
             catch (Exception ex)
             {

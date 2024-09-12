@@ -171,6 +171,7 @@
             this.btnAceptarArticulo.TabIndex = 14;
             this.btnAceptarArticulo.Text = "Agregar";
             this.btnAceptarArticulo.UseVisualStyleBackColor = true;
+            this.btnAceptarArticulo.Click += new System.EventHandler(this.btnAceptarArticulo_Click);
             // 
             // btnCancelarArticulo
             // 

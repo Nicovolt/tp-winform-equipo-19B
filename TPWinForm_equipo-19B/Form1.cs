@@ -14,7 +14,7 @@ namespace TPWinForm_equipo_19B
 {
     public partial class Form1 : Form
     {
-        private List<Articulo> Lista = new List<Articulo>();
+        private List<Articulo> Lista;
         public Form1()
         {
             InitializeComponent();
@@ -22,13 +22,7 @@ namespace TPWinForm_equipo_19B
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-
-            Lista = articuloNegocio.listar();
-
-            dvgArticulo.DataSource = Lista;
-      
-
+            cargar();
         }
 
        
@@ -41,7 +35,8 @@ namespace TPWinForm_equipo_19B
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmVentanaAgregarArticulo agregar = new frmVentanaAgregarArticulo();
-            agregar.Show();
+            agregar.ShowDialog();
+            cargar();
         }
 
         private void dvgArticulo_SelectionChanged(object sender, EventArgs e)
@@ -109,10 +104,17 @@ namespace TPWinForm_equipo_19B
         }
         private void cargar()
         {
-            ArticuloNegocio negArt = new ArticuloNegocio();
-            Lista = negArt.listar();
-            dvgArticulo.DataSource = Lista;
-            
+            ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+            try
+            {
+                Lista = articuloNegocio.listar();
+                dvgArticulo.DataSource = Lista;
+                CargarImagen(Lista[0].ImagenUrl.Url.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
