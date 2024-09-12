@@ -26,6 +26,7 @@ namespace TPWinForm_equipo_19B
             this.articulo = item;
             Text = "Modificar Articulo";
             btnAceptarArticulo.Text = "Actualizar";
+            pbxImagenArticulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
 
         private void btnCancelarArticulo_Click(object sender, EventArgs e)
@@ -100,9 +101,13 @@ namespace TPWinForm_equipo_19B
         {
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
             ImagenNegocio imagenNegocio = new ImagenNegocio();
+
             try
             {
                 if (articulo == null) { articulo = new Articulo(); }
+
+                if (!validarMaximoCincuentaCaracteres(tbxCodigo) || !validarMaximoCincuentaCaracteres(tbxNombre) || !validarMaximoCientoCincuentaCaracteres(tbxDescripcion) || !validarMaximoMilCaracteres(tbxUrlImagen) || !validarSoloNumeros(tbxPrecio)) return;
+                if (!validarSeleccionComboBox(cbxMarca) || !validarSeleccionComboBox(cbxCategoria)) return;
 
                 articulo.Codigo = tbxCodigo.Text;
                 articulo.Nombre = tbxNombre.Text;
@@ -135,6 +140,57 @@ namespace TPWinForm_equipo_19B
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private bool validarMaximoCincuentaCaracteres(TextBox item)
+        {
+            if (item.Text.Length > 50 || string.IsNullOrEmpty(item.Text))
+            {
+                MessageBox.Show("Uno de los campos tiene un limite de 50 caracteres o esta vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        private bool validarMaximoCientoCincuentaCaracteres(TextBox item)
+        {
+            if (item.Text.Length > 150 || string.IsNullOrEmpty(item.Text))
+            {
+                MessageBox.Show("Uno de los campos tiene un limite de 150 caracteres o esta vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        private bool validarMaximoMilCaracteres(TextBox item)
+        {
+            if (item.Text.Length > 1000 || string.IsNullOrEmpty(item.Text))
+            {
+                MessageBox.Show("El campo Imagen tiene un limite de 1000 caracteres o esta vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        private bool validarSoloNumeros(TextBox item)
+        {
+            if (!decimal.TryParse(item.Text, out decimal resultado) || string.IsNullOrEmpty(item.Text))
+            {
+                MessageBox.Show("El campo Precio solo admite numeros o esta vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+        private bool validarSeleccionComboBox(ComboBox item)
+        {
+            if (item.SelectedIndex == -1)
+            {
+                MessageBox.Show("No complestaste uno de los desplegables", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            return true;
+        }
+
+        private void btnVerImagen_Click(object sender, EventArgs e)
+        {
+            cargarImagen(tbxUrlImagen.Text);
         }
     }
 }
