@@ -125,7 +125,9 @@ namespace TPWinForm_equipo_19B
 
             if (busqueda != "")
             {
-                listaBusqueda = Lista.FindAll(art => art.ID == int.Parse(busqueda));
+                listaBusqueda = Lista.FindAll(art => art.ID.ToString().ToUpper().Contains(busqueda.ToUpper()) || art.Nombre.ToUpper().Contains(busqueda.ToUpper())
+                || art.Descripcion.ToUpper().Contains(busqueda.ToUpper()) ||
+                art.Codigo.ToString().ToUpper().Contains(busqueda.ToUpper()));
             }
             else
             {
@@ -140,6 +142,11 @@ namespace TPWinForm_equipo_19B
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dvgArticulo.CurrentRow == null)
+            {
+                MessageBox.Show("No seleccionaste un producto");
+                return;
+            }
             Articulo selected = (Articulo)dvgArticulo.CurrentRow.DataBoundItem;
 
             frmVentanaAgregarArticulo modificar = new frmVentanaAgregarArticulo(selected);
