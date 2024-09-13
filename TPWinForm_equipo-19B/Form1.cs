@@ -119,25 +119,7 @@ namespace TPWinForm_equipo_19B
 
         private void button4_Click(object sender, EventArgs e)
         {
-            List<Articulo> listaBusqueda;
-
-            string busqueda = txtId.Text;
-
-            if (busqueda != "")
-            {
-                listaBusqueda = Lista.FindAll(art => art.ID.ToString().ToUpper().Contains(busqueda.ToUpper()) || art.Nombre.ToUpper().Contains(busqueda.ToUpper())
-                || art.Descripcion.ToUpper().Contains(busqueda.ToUpper()) ||
-                art.Codigo.ToString().ToUpper().Contains(busqueda.ToUpper()));
-            }
-            else
-            {
-                listaBusqueda = Lista;
-            }
-
-
-            dvgArticulo.DataSource = null;
-            dvgArticulo.DataSource = listaBusqueda;
-
+            busquedaGlobal();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -204,6 +186,40 @@ namespace TPWinForm_equipo_19B
             dvgArticulo.DataSource = listaFiltrada;
             dvgArticulo.Columns["Codigo"].Visible = false;
             
+        }
+
+        private void busquedaGlobal()
+        {
+            List<Articulo> listaBusqueda;
+
+            string busqueda = txtId.Text;
+
+            if (busqueda != "")
+            {
+                listaBusqueda = Lista.FindAll(art => art.ID.ToString().ToUpper().Contains(busqueda.ToUpper()) || art.Nombre.ToUpper().Contains(busqueda.ToUpper())
+                || art.Descripcion.ToUpper().Contains(busqueda.ToUpper()) ||
+                art.Codigo.ToString().ToUpper().Contains(busqueda.ToUpper())
+                || art.Marca.Descripcion.ToUpper().Contains(busqueda.ToUpper())
+                || art.Categoria.Descripcion.ToUpper().Contains(busqueda.ToUpper()));
+            }
+            else
+            {
+                listaBusqueda = Lista;
+            }
+
+
+            dvgArticulo.DataSource = null;
+            dvgArticulo.DataSource = listaBusqueda;
+        }
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Si se presiona la tecla Enter, realizar la búsqueda
+                busquedaGlobal();
+                // Evitar que se procese la tecla Enter por defecto
+                e.Handled = true;
+            }
         }
     }
 }

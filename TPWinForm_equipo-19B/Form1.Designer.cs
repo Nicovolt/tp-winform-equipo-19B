@@ -32,7 +32,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
+            this.lbBuscador = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -89,14 +89,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Listado de articulos";
             // 
-            // lblId
+            // lbBuscador
             // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(227, 30);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(21, 13);
-            this.lblId.TabIndex = 4;
-            this.lblId.Text = "ID:";
+            this.lbBuscador.AutoSize = true;
+            this.lbBuscador.Location = new System.Drawing.Point(193, 33);
+            this.lbBuscador.Name = "lbBuscador";
+            this.lbBuscador.Size = new System.Drawing.Size(55, 13);
+            this.lbBuscador.TabIndex = 4;
+            this.lbBuscador.Text = "Buscador:";
             // 
             // txtId
             // 
@@ -104,6 +104,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 5;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // btnBuscar
             // 
@@ -228,7 +229,7 @@
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.lbBuscador);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
@@ -249,7 +250,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lbBuscador;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCerrar;
