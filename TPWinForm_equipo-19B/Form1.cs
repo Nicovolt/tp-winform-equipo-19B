@@ -109,6 +109,7 @@ namespace TPWinForm_equipo_19B
             {
                 Lista = articuloNegocio.listar();
                 dvgArticulo.DataSource = Lista;
+                dvgArticulo.Columns["ImagenUrl"].Visible = false;
                 CargarImagen(Lista[0].ImagenUrl.Url.ToString());
             }
             catch (Exception ex)
@@ -221,5 +222,6 @@ namespace TPWinForm_equipo_19B
                 e.Handled = true;
             }
         }
+
     }
 }

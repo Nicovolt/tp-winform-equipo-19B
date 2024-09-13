@@ -188,7 +188,7 @@ namespace TPWinForm_equipo_19B
             return true;
         }
 
-        private void btnVerImagen_Click(object sender, EventArgs e)
+        private void tbxUrlImagen_Leave(object sender, EventArgs e)
         {
             cargarImagen(tbxUrlImagen.Text);
         }

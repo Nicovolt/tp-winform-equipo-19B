@@ -45,7 +45,6 @@
             this.btnAceptarArticulo = new System.Windows.Forms.Button();
             this.btnCancelarArticulo = new System.Windows.Forms.Button();
             this.pbxImagenArticulo = new System.Windows.Forms.PictureBox();
-            this.btnVerImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,14 +62,14 @@
             this.tbxCodigo.Location = new System.Drawing.Point(117, 47);
             this.tbxCodigo.Name = "tbxCodigo";
             this.tbxCodigo.Size = new System.Drawing.Size(177, 20);
-            this.tbxCodigo.TabIndex = 1;
+            this.tbxCodigo.TabIndex = 0;
             // 
             // tbxNombre
             // 
             this.tbxNombre.Location = new System.Drawing.Point(117, 88);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(177, 20);
-            this.tbxNombre.TabIndex = 3;
+            this.tbxNombre.TabIndex = 2;
             // 
             // lblNombre
             // 
@@ -78,7 +77,7 @@
             this.lblNombre.Location = new System.Drawing.Point(64, 91);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
-            this.lblNombre.TabIndex = 2;
+            this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre:";
             // 
             // tbxDescripcion
@@ -87,7 +86,7 @@
             this.tbxDescripcion.Multiline = true;
             this.tbxDescripcion.Name = "tbxDescripcion";
             this.tbxDescripcion.Size = new System.Drawing.Size(177, 51);
-            this.tbxDescripcion.TabIndex = 5;
+            this.tbxDescripcion.TabIndex = 3;
             // 
             // lblDescripcion
             // 
@@ -109,19 +108,21 @@
             // 
             // cbxMarca
             // 
+            this.cbxMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMarca.FormattingEnabled = true;
             this.cbxMarca.Location = new System.Drawing.Point(117, 208);
             this.cbxMarca.Name = "cbxMarca";
             this.cbxMarca.Size = new System.Drawing.Size(177, 21);
-            this.cbxMarca.TabIndex = 7;
+            this.cbxMarca.TabIndex = 4;
             // 
             // cbxCategoria
             // 
+            this.cbxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCategoria.FormattingEnabled = true;
             this.cbxCategoria.Location = new System.Drawing.Point(117, 248);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Size = new System.Drawing.Size(177, 21);
-            this.cbxCategoria.TabIndex = 9;
+            this.cbxCategoria.TabIndex = 5;
             // 
             // lblCategoria
             // 
@@ -137,7 +138,7 @@
             this.tbxPrecio.Location = new System.Drawing.Point(117, 287);
             this.tbxPrecio.Name = "tbxPrecio";
             this.tbxPrecio.Size = new System.Drawing.Size(177, 20);
-            this.tbxPrecio.TabIndex = 11;
+            this.tbxPrecio.TabIndex = 6;
             // 
             // lblPrecio
             // 
@@ -153,7 +154,8 @@
             this.tbxUrlImagen.Location = new System.Drawing.Point(74, 321);
             this.tbxUrlImagen.Name = "tbxUrlImagen";
             this.tbxUrlImagen.Size = new System.Drawing.Size(350, 20);
-            this.tbxUrlImagen.TabIndex = 13;
+            this.tbxUrlImagen.TabIndex = 7;
+            this.tbxUrlImagen.Leave += new System.EventHandler(this.tbxUrlImagen_Leave);
             // 
             // lblUrlImagen
             // 
@@ -169,7 +171,7 @@
             this.btnAceptarArticulo.Location = new System.Drawing.Point(402, 370);
             this.btnAceptarArticulo.Name = "btnAceptarArticulo";
             this.btnAceptarArticulo.Size = new System.Drawing.Size(141, 27);
-            this.btnAceptarArticulo.TabIndex = 14;
+            this.btnAceptarArticulo.TabIndex = 9;
             this.btnAceptarArticulo.Text = "Agregar";
             this.btnAceptarArticulo.UseVisualStyleBackColor = true;
             this.btnAceptarArticulo.Click += new System.EventHandler(this.btnAceptarArticulo_Click);
@@ -179,7 +181,7 @@
             this.btnCancelarArticulo.Location = new System.Drawing.Point(12, 370);
             this.btnCancelarArticulo.Name = "btnCancelarArticulo";
             this.btnCancelarArticulo.Size = new System.Drawing.Size(141, 27);
-            this.btnCancelarArticulo.TabIndex = 15;
+            this.btnCancelarArticulo.TabIndex = 8;
             this.btnCancelarArticulo.Text = "Cancelar";
             this.btnCancelarArticulo.UseVisualStyleBackColor = true;
             this.btnCancelarArticulo.Click += new System.EventHandler(this.btnCancelarArticulo_Click);
@@ -193,22 +195,11 @@
             this.pbxImagenArticulo.TabIndex = 16;
             this.pbxImagenArticulo.TabStop = false;
             // 
-            // btnVerImagen
-            // 
-            this.btnVerImagen.Location = new System.Drawing.Point(430, 321);
-            this.btnVerImagen.Name = "btnVerImagen";
-            this.btnVerImagen.Size = new System.Drawing.Size(113, 23);
-            this.btnVerImagen.TabIndex = 17;
-            this.btnVerImagen.Text = "Previsualizar Imagen";
-            this.btnVerImagen.UseVisualStyleBackColor = true;
-            this.btnVerImagen.Click += new System.EventHandler(this.btnVerImagen_Click);
-            // 
             // frmVentanaAgregarArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 424);
-            this.Controls.Add(this.btnVerImagen);
             this.Controls.Add(this.pbxImagenArticulo);
             this.Controls.Add(this.btnCancelarArticulo);
             this.Controls.Add(this.btnAceptarArticulo);
@@ -255,6 +246,5 @@
         private System.Windows.Forms.Button btnAceptarArticulo;
         private System.Windows.Forms.Button btnCancelarArticulo;
         private System.Windows.Forms.PictureBox pbxImagenArticulo;
-        private System.Windows.Forms.Button btnVerImagen;
     }
 }

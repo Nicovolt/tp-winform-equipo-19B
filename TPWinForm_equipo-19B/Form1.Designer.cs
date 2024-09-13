@@ -197,7 +197,11 @@
             // 
             this.dvgArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgArticulo.Location = new System.Drawing.Point(6, 62);
+            this.dvgArticulo.MultiSelect = false;
             this.dvgArticulo.Name = "dvgArticulo";
+            this.dvgArticulo.ReadOnly = true;
+            this.dvgArticulo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dvgArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgArticulo.Size = new System.Drawing.Size(709, 273);
             this.dvgArticulo.TabIndex = 16;
             this.dvgArticulo.SelectionChanged += new System.EventHandler(this.dvgArticulo_SelectionChanged);
