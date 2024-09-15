@@ -27,6 +27,7 @@ namespace TPWinForm_equipo_19B
             Text = "Modificar Articulo";
             btnAceptarArticulo.Text = "Actualizar";
             pbxImagenArticulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BackColor = Color.Azure;
         }
 
         private void btnCancelarArticulo_Click(object sender, EventArgs e)

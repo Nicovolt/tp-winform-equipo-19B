@@ -12,10 +12,10 @@ using Negocio;
 
 namespace TPWinForm_equipo_19B
 {
-    public partial class Form1 : Form
+    public partial class frmHome : Form
     {
         private List<Articulo> Lista;
-        public Form1()
+        public frmHome()
         {
             InitializeComponent();
         }
