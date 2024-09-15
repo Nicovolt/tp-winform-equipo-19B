@@ -140,5 +140,79 @@ namespace Negocio
                 datos.cerrarConexion(); 
             }
         }
+
+        public void agregarMarca(Marca nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into MARCAS (Descripcion) values ('" + nuevo.Descripcion + "')");
+                datos.setearParametro("@idMarca", nuevo.IdMarca);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+                
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
+        public void agregarCategoria(Categoria nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into CATEGORIAS (Descripcion) values ('" + nuevo.Descripcion + "')");
+                datos.setearParametro("@idCategoria", nuevo.IdCategoria);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
+        public void modificarMarca(Marca reg)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            try
+            {
+                accesoDatos.setearConsulta("update MARCAS set  Descripcion = @descripcion WHERE id = '" + reg.IdMarca + "' ");
+                accesoDatos.setearParametro("@descripcion", reg.Descripcion);
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+               
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+        public void modificarCategoria(Categoria reg)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            try
+            {
+                accesoDatos.setearConsulta("update CATEGORIAS set  Descripcion = @descripcion WHERE id = '" + reg.IdCategoria + "' ");
+                accesoDatos.setearParametro("@descripcion", reg.Descripcion);
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+               
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
     }
 }

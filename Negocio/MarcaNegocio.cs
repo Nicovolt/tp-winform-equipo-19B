@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,50 @@ namespace Negocio
             finally
             {
                 data.cerrarConexion();
+            }
+        }
+
+        public int obtener(string id)
+        {
+            int marcaID;
+            SqlConnection connection = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader reader = null;
+
+            try
+            {
+                
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("SELECT * FROM [dbo].[MARCAS] WHERE Descripcion = @desc\"");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+
+              
+
+                if (reader.Read())
+                {
+
+                    marcaID = (int)reader["Id"];
+                }
+                else
+                {
+                    marcaID = 0;
+                }
+
+                return marcaID;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+
+                connection.Close();
             }
         }
     }
