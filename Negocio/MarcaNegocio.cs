@@ -104,5 +104,46 @@ namespace Negocio
                 connection.Close();
             }
         }
+
+        public void modificar(Marca reg)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            try
+            {
+                accesoDatos.setearConsulta("update MARCAS set Descripcion = @descripcion@ WHERE id = @id_marca@;");
+                accesoDatos.setearParametro("@descripcion@", reg.Descripcion);
+                accesoDatos.setearParametro("@id_marca@", reg.IdMarca);
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Marca reg)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            try
+            {
+                accesoDatos.setearConsulta("DELETE FROM MARCAS WHERE Id=@id_marca@;");
+                accesoDatos.setearParametro("@id_marca@", reg.IdMarca);
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
     }
 }

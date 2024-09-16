@@ -88,6 +88,65 @@ namespace Negocio
             }
         }
 
+        public void agregarCategoria(Categoria nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into CATEGORIAS (Descripcion) values (@Descripcion@);");
+                datos.setearParametro("@Descripcion@", nuevo.Descripcion);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            { 
+                datos.cerrarConexion(); 
+            }
+        }
+
+        public void modificarCategoria(Categoria reg)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            try
+            {
+                accesoDatos.setearConsulta("update CATEGORIAS set Descripcion = @descripcion@ WHERE id = @id_categoria@;");
+                accesoDatos.setearParametro("@descripcion@", reg.Descripcion);
+                accesoDatos.setearParametro("@id_categoria@", reg.IdCategoria);
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
+
+        public void eliminar(Categoria reg)
+        {
+            AccesoDatos accesoDatos = new AccesoDatos();
+            try
+            {
+                accesoDatos.setearConsulta("DELETE FROM CATEGORIAS WHERE Id=@id_categoria@;");
+                accesoDatos.setearParametro("@id_categoria@", reg.IdCategoria);
+                accesoDatos.ejecutarAccion();
+            }
+            catch (Exception)
+            {
+
+
+            }
+            finally
+            {
+                accesoDatos.cerrarConexion();
+            }
+        }
 
     }
 }

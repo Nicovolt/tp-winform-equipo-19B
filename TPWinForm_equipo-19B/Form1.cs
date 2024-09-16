@@ -223,5 +223,11 @@ namespace TPWinForm_equipo_19B
             }
         }
 
+        private void btnMarcasCategorias_Click(object sender, EventArgs e)
+        {
+            frmMarcaCategoria frmMarcaCategoria = new frmMarcaCategoria();
+            frmMarcaCategoria.ShowDialog();
+            cargar();
+        }
     }
 }
